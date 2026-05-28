@@ -1,0 +1,62 @@
+<app-navbar></app-navbar>
+<div class="table-container">
+<!-- old angular control flow format -->
+<div class="table-box" *ngIf="shipments.length > 0 ; else noData">
+    <table border="1">
+        <tr>
+            <th>Customer</th>
+            <th>Status</th>
+        </tr>
+        <tr *ngFor="let ship of shipments">
+            <td>{{ ship.customer }}</td>
+            <td [ngSwitch]="ship.status">
+                <span *ngSwitchCase="'delivered'">Delivered</span>
+                <span *ngSwitchCase="'pending'">Pending</span>
+                <span *ngSwitchCase="'cancelled'">Cancelled</span>
+                <span *ngSwitchDefault>Unknown Status</span>
+            </td>
+        </tr>
+    </table>
+</div>
+<ng-template #noData>
+    <p>No shipments available.</p>
+</ng-template>
+
+<!-- new angular control flow format -->
+<!-- <div class="table-box">
+    @if(customersDetails.length>0){
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        @for(customer of customersDetails; track customer.age){
+        <tr>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.age }}</td>
+            <td>
+                @switch(customer.languageknown){
+                @case('kannada'){
+                <span> {{ customer.city}}</span> }
+                @case('tamil'){
+                <span> {{ customer.city}}</span> }
+                @case('telugu'){
+                <span> {{ customer.city}}</span> }
+                @default{
+                <span> Chennai</span>
+                }
+                }
+            </td>
+        </tr>
+        }
+    </table>
+    }
+    @else{
+    <p>No customer details available.</p>
+    }
+</div> -->
+</div>
+
+<app-customer-list [customers]="customersDetails" ></app-customer-list>
+

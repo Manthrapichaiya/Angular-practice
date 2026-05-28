@@ -1,0 +1,28 @@
+.table-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* to allow tables to wrap on smaller screens */
+}
+
+.table-box {
+    padding: 10px;
+    min-width: 300px;
+    flex: 1;
+    /* Each table will take equal space */
+}
+
+table,
+th,
+td {
+    border: 1px solid rgb(22, 165, 65);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+

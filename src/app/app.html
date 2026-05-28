@@ -1,0 +1,83 @@
+<!-- Old angular syntax -->
+<!-- <div *ngIf="shipments.length >0; else noData" >
+  <table border="1">
+    <tr>
+      <th>Customer</th>
+      <th>Status</th>
+    </tr>
+    <tr *ngFor="let shipment of shipments">
+      <td>{{ shipment.customer }}</td>
+      <td>
+        <span [ngSwitch]="shipment.status">
+          <span *ngSwitchCase="delivered">Delivered</span>
+          <span *ngSwitchCase="pending">Pending</span>
+          <span *ngSwitchCase="cancelled">Cancelled</span>
+          <span *ngSwitchDefault>Unknown Status</span>
+        </span>
+        
+      </td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #noData>
+  <p>No shipments available.</p>  
+</ng-template> -->
+
+<!-- New angular syntax -->
+<!-- <div>
+
+  @if (shipments.length > 0) {
+
+    <table border="1">
+
+      <tr>
+        <th>Customer</th>
+        <th>Status</th>
+      </tr>
+
+      @for (shipment of shipments; track shipment.customer) {
+
+        <tr>
+
+          <td>{{ shipment.customer }}</td>
+
+          <td>
+
+            @switch (shipment.status) {
+
+              @case ('delivered') {
+                <span>Delivered</span>
+              }
+
+              @case ('pending') {
+                <span>Pending</span>
+              }
+
+              @case ('cancelled') {
+                <span>Cancelled</span>
+              }
+
+              @default {
+                <span>Unknown Status</span>
+              }
+
+            }
+
+          </td>
+
+        </tr>
+
+      }
+
+    </table>
+
+  } @else {
+
+    <p>No shipments available.</p>
+
+  }
+
+</div> -->
+
+<router-outlet></router-outlet>
