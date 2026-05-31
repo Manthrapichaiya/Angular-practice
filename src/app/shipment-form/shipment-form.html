@@ -1,19 +1,19 @@
- <div class="form-container">
-        <h2>Shipment Form</h2>
-        <form class="shipment-form">
-             <div class="form-group">
+<div class="form-container">
+    <h2>Shipment Form</h2>
+    <form class="shipment-form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
             <label for="customer">Customer Name:</label>
             <input type="text" id="customer" name="customer" [(ngModel)]="customer_name" (input)="checkForm()">
-          </div>
-           <div class="form-group">
+        </div>
+        <div class="form-group">
             <label for="status">Status:</label>
-            <select id="status" name="status" [(ngModel)]="status" (change)="checkForm()">
+            <select id="status" name="status" [(ngModel)]="status" (ngModelChange)="checkForm()">
+                <option value="">-- Select Status --</option>
                 <option value="pending">Pending</option>
                 <option value="delivered">Delivered</option>
                 <option value="cancelled">Cancelled</option>
             </select>
-            </div>
-            <button type="submit" [disabled]="isDisabled" (click)="updateCards()">Submit</button>
-        </form>
-
-    </div>
+        </div>
+        <button type="submit" [disabled]="isDisabled">Submit</button>
+    </form>
+</div>

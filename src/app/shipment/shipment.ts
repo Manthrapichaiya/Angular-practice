@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Navbar } from '../layout/navbar/navbar';
 import { CustomerList } from '../customer-list/customer-list';
+import { ShipmentData  } from '../models/shipment.model';
 
 @Component({
   selector: 'app-shipment',
@@ -10,7 +11,7 @@ import { CustomerList } from '../customer-list/customer-list';
   styleUrl: './shipment.css',
 })
 export class Shipment {
-    shipments = [
+    shipments : ShipmentData [] = [
     { customer : 'Manthra', status : 'delivered'},
     { customer : 'Kumar', status : 'pending'},
     { customer : 'Athvik', status : 'cancelled'},

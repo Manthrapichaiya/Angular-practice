@@ -1,37 +1,33 @@
 .form-container {
     margin-top: 30px;
-
     width: 400px;
-
     background-color: #f9f9f9;
-
     padding: 20px;
-
     border-radius: 8px;
 }
 
 .shipment-form {
     display: flex;
-
     flex-direction: column;
-
     gap: 20px;
 }
 
 .form-group {
     display: flex;
-
     align-items: center;
-
     gap: 15px;
 }
-.input, select{
+
+.input,
+select {
     flex: 1;
     padding: 8px;
 }
+
 label {
     width: 130px;
 }
+
 button {
     width: fit-content;
     align-self: center;

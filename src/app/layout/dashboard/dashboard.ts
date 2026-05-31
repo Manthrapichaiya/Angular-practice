@@ -2,38 +2,27 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';
 import { Navbar } from '../navbar/navbar';
+import { StatCard } from '../../stat-card/stat-card';
+import { ShipmentForm } from '../../shipment-form/shipment-form';
+import { ShipmentData  } from '../../models/shipment.model';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterLink,FormsModule,Navbar],
+  imports: [FormsModule, Navbar, StatCard, ShipmentForm],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
-  customer_name!: string;
-  status!:string;
-  isDisabled:boolean=true;
-  total : number = 150 ;
-  pending : number =30;
-  delivered : number =100;
-  cancel : number=20;
 
-  checkForm(){
-    if(this.customer_name != '' && this.status != "")
-    {
-      this.isDisabled = false
-    }
-    else{
-      this.isDisabled = true
-    }
-  }
-  updateCards(){
-    this.total++
-    if(this.status == 'pending')
-     this.pending++;
-    else if(this.status == 'delivered')
-      this.delivered++;
-    else
-      this.cancel++
+  total: number = 0;
+  pending: number = 0;
+  delivered: number = 0;
+  cancel: number = 0;
+
+  updateCards(data: ShipmentData) {
+    this.total++;
+    if (data.status === 'pending') this.pending++;
+    else if (data.status === 'delivered') this.delivered++;
+    else this.cancel++;
   }
 }

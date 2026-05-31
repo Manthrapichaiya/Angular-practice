@@ -1,42 +1,10 @@
-<app-navbar [customerName]="customer_name"></app-navbar>
+<app-navbar></app-navbar>
 <div class="dashboard">
-    <div class="card-container">
-        <div class="card" routerLink="/shipment">
-            <h3>Total Shipments</h3>
-            <p>{{total}}</p>
-        </div>
-        <div class="card" routerLink="/shipment">
-            <h3>Pending Shipments</h3>
-             <p>{{pending}}</p>
-        </div>
-        <div class="card" routerLink="/shipment">
-            <h3>Delivered Shipments</h3>
-             <p>{{delivered}}</p>
-        </div>
-        <div class="card" routerLink="/shipment">
-            <h3>Cancelled Shipments</h3>
-             <p>{{cancel}}</p>
-        </div>
-
+    <div class="card-row">
+        <app-stat-card [title]="'Total Shipments'" [value]="total"></app-stat-card>
+        <app-stat-card [title]="'Pending Shipments'" [value]="pending"></app-stat-card>
+        <app-stat-card [title]="'Delivered Shipments'" [value]="delivered"></app-stat-card>
+        <app-stat-card [title]="'Cancelled Shipments'" [value]="cancel"></app-stat-card>
     </div>
-    <div class="form-container">
-        <h2>Shipment Form</h2>
-        <form class="shipment-form">
-             <div class="form-group">
-            <label for="customer">Customer Name:</label>
-            <input type="text" id="customer" name="customer" [(ngModel)]="customer_name" (input)="checkForm()">
-          </div>
-           <div class="form-group">
-            <label for="status">Status:</label>
-            <select id="status" name="status" [(ngModel)]="status" (change)="checkForm()">
-                <option value="pending">Pending</option>
-                <option value="delivered">Delivered</option>
-                <option value="cancelled">Cancelled</option>
-            </select>
-            </div>
-            <button type="submit" [disabled]="isDisabled" (click)="updateCards()">Submit</button>
-        </form>
-
-    </div>
-
+    <app-shipment-form (formsubmitted)="updateCards($event)"></app-shipment-form>
 </div>

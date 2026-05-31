@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ShipmentData } from '../models/shipment.model';
 
 @Component({
   selector: 'app-shipment-form',
@@ -8,25 +9,21 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './shipment-form.css',
 })
 export class ShipmentForm {
-   isDisabled:boolean=true;
-     customer_name!: string;
-  status!:string;
-     checkForm(){
-    if(this.customer_name != '' && this.status != "")
-    {
-      this.isDisabled = false
-    }
-    else{
-      this.isDisabled = true
-    }
+  @Output() formsubmitted = new EventEmitter<ShipmentData>();
+  isDisabled: boolean = true;
+  customer_name: string = '';
+  status: string = '';
+  checkForm() {
+    this.isDisabled = this.customer_name === '' || this.status === '';
   }
-  updateCards(){
-    // this.total++
-    // if(this.status == 'pending')
-    //  this.pending++;
-    // else if(this.status == 'delivered')
-    //   this.delivered++;
-    // else
-    //   this.cancel++
+  onSubmit() {
+    this.formsubmitted.emit(
+      {
+        customer: this.customer_name,
+        status: this.status as 'pending' | 'delivered' | 'cancelled'
+      });
+    this.customer_name = '';
+    this.status = '';
+    this.checkForm();
   }
 }

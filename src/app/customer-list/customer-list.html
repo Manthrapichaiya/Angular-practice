@@ -1,48 +1,43 @@
-
-
-
 <div class="table-container">
-    <table border="1">
-        <tr>
-            <th> Name</th>
-            <th> Age</th>
-            <th> City</th>
-            <th> language known</th>
-        </tr>
-        @if(customers.length > 0){
-  @for(customer of customers; track customer.age)
+  <table border="1">
+    <tr>
+      <th> Name</th>
+      <th> Age</th>
+      <th> City</th>
+      <th> language known</th>
+    </tr>
+    @if(customers.length > 0){
+    @for(customer of customers; track customer.age)
     {
-        <tr>
-            <td>{{ customer.name }}</td>
-            <td>{{ customer.age }}</td>
-            <td>{{ customer.languageknown }}</td>
-            <td>
-                  @switch(customer.languageknown) {
-              @case('tamil') {
-                <span class="badge badge-green">Tamil</span>
-              }
-              @case('kannada') {
-                <span class="badge badge-purple">Kannada</span>
-              }
-              @case('telugu') {
-                <span class="badge badge-amber">Telugu</span>
-              }
-              @default {
-                <span class="badge badge-grey">{{ customer.languageknown }}</span>
-              }
-            }
-            </td>
-        </tr>
+    <tr>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.age }}</td>
+      <td>{{ customer.languageknown }}</td>
+      <td>
+        @switch(customer.languageknown) {
+        @case('tamil') {
+        <span class="badge badge-green">Tamil</span>
+        }
+        @case('kannada') {
+        <span class="badge badge-purple">Kannada</span>
+        }
+        @case('telugu') {
+        <span class="badge badge-amber">Telugu</span>
+        }
+        @default {
+        <span class="badge badge-grey">{{ customer.languageknown }}</span>
+        }
+        }
+      </td>
+    </tr>
     }
-        }
-        @else{
-           <tr>
-            <td colspan="4" style="text-align: center; color:#999;">
-No Data found
-            </td>
-           </tr>
-        }
-      
-    </table>
-
+    }
+    @else{
+    <tr>
+      <td colspan="4" style="text-align: center; color:#999;">
+        No Data found
+      </td>
+    </tr>
+    }
+  </table>
 </div>
