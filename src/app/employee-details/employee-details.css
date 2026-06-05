@@ -1,103 +1,50 @@
-.detail-page {
-  min-height: 100vh;
+.selected-employee {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   background: #f4f6fb;
   padding: 32px 16px;
 }
 
-.back-btn {
-  align-self: flex-start;
-  margin-left: calc(50% - 220px);
-  margin-bottom: 24px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #4a90e2;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.back-btn:hover {
-  color: #357abd;
-}
-
-.detail-card {
+.emp {
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  padding: 40px 48px;
-  width: 100%;
-  max-width: 440px;
+  padding: 36px 48px;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  gap: 12px;
 }
 
-.avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: #4a90e2;
-  color: #fff;
-  font-size: 28px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.emp-name {
-  font-size: 22px;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 0 6px 0;
-}
-
-.emp-role {
-  font-size: 14px;
-  font-weight: 500;
-  color: #4a90e2;
-  background: #e8f0fd;
-  padding: 4px 12px;
-  border-radius: 20px;
-}
-
-.divider {
-  width: 100%;
-  height: 1px;
-  background: #f0f0f0;
-  margin: 24px 0;
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  width: 100%;
-}
-
-.info-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.info-label {
-  font-size: 11px;
+.emp h3 {
+  margin: 0 0 8px 0;
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: #999;
+  color: #4a90e2;
 }
 
-.info-value {
-  font-size: 16px;
-  font-weight: 600;
+.emp p {
+  margin: 0;
+  font-size: 15px;
   color: #1a1a1a;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.emp p:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.detail-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .loading {

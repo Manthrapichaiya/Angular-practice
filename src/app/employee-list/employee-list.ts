@@ -1,4 +1,4 @@
-import { Component, inject, Inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Employee } from '../models/employee.model';
 import { EmployeeCard } from '../employee-card/employee-card';
 import { EmployeeService } from '../employee';

@@ -1,7 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { EmployeeService } from '../employee';
-import { Employee } from '../models/employee.model';
 
 @Component({
   selector: 'app-employee-details',
@@ -9,16 +8,18 @@ import { Employee } from '../models/employee.model';
   templateUrl: './employee-details.html',
   styleUrl: './employee-details.css',
 })
-export class EmployeeDetails {
+export class EmployeeDetails implements OnInit {
    private route = inject(ActivatedRoute);
   private empService = inject(EmployeeService);
   
-  employee: Employee | null = null;
+ employee = signal<any>(null);
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.empService.getEmployee().subscribe(data => {
-      this.employee = data.find(e => e.id === Number(id)) || null;
+      const found = data.find(e => e.id === Number(id)) || null;
+      this.employee.set(found)
     });
+    
   }
 }

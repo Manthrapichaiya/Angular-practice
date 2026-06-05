@@ -1,6 +1,6 @@
 <div class="employee-card">
     @if(employee){
-    <div class="card-row" (click)="selectedEmployeeFun(employee)"  >
+    <div class="card-row"   [routerLink]="['/employee', employee.id]">
         <p> {{employee.id }}</p>
         <p> {{employee.name }}</p>
         <p> {{employee.role }}</p>
@@ -8,4 +8,4 @@
     </div>
     }
 </div>
-<!-- [routerLink]="['/employee', employee.id]" -->
+<!-- (click)="selectedEmployeeFun(employee)" -->
