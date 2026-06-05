@@ -1,0 +1,11 @@
+<div class="employee-card">
+    @if(employee){
+    <div class="card-row" (click)="selectedEmployeeFun(employee)"  >
+        <p> {{employee.id }}</p>
+        <p> {{employee.name }}</p>
+        <p> {{employee.role }}</p>
+        <p> {{employee.department }}</p>
+    </div>
+    }
+</div>
+<!-- [routerLink]="['/employee', employee.id]" -->

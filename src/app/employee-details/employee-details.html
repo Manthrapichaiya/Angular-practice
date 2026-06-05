@@ -1,0 +1,25 @@
+@if (employee) {
+  <div class="detail-page">
+    <a class="back-btn" routerLink="/">&#8592; Back to List</a>
+    <div class="detail-card">
+      <div class="avatar">{{ employee.name.charAt(0) }}</div>
+      <h2 class="emp-name">{{ employee.name }}</h2>
+      <span class="emp-role">{{ employee.role }}</span>
+      <div class="divider"></div>
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="info-label">ID</span>
+          <span class="info-value">{{ employee.id }}</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Department</span>
+          <span class="info-value">{{ employee.department }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="detail-page">
+    <p class="loading">Loading...</p>
+  </div>
+}

@@ -1,0 +1,50 @@
+/* employee-card.css */
+.employee-card {
+  flex: 1 1 250px;
+  max-width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.card-row:hover {
+  opacity: 0.85;
+}
+
+.employee-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.card-row p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.card-row p:first-child {
+  font-size: 11px;
+  color: #999;
+}
+
+.card-row p:nth-child(2) {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.card-row p:nth-child(3) {
+  font-size: 13px;
+  color: #4a90e2;
+  font-weight: 500;
+}

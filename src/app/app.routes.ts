@@ -3,7 +3,13 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
     {
         path: '',
-        loadComponent: () => import('./layout/layout').then(m => m.Layout)
+        // loadComponent: () => import('./layout/layout').then(m => m.Layout)
+          loadComponent: () => import('./employee-list/employee-list').then(m => m.EmployeeList)
+    },
+    {
+        path: 'employee/:id',
+       
+          loadComponent: () => import('./employee-details/employee-details').then(m => m.EmployeeDetails)
     },
     {
   path: 'shipment',

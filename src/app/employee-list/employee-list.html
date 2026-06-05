@@ -1,0 +1,27 @@
+<div class="employee-list-container">
+  <h2>Employee List</h2>
+  @if (employees().length === 0) {
+  <p>No employees found.</p>
+  } @else {
+  <div class="employee-list">
+    @for (emp of employees(); track emp.id) {
+    <app-employee-card [employee]="emp" (selectedEmployee)="employeeSelected($event)"></app-employee-card>
+  
+  }
+  </div>
+
+  }
+</div>
+
+<div class="selected-employee">
+  @if(selectedEmp){
+    <div class="emp">
+      <h3> Selected Employee</h3>
+ <p> {{ selectedEmp.id }} </p>
+  <p> {{ selectedEmp.name }} </p>
+  <p> {{ selectedEmp.role }} </p>
+  <p> {{ selectedEmp.department }} </p>
+    </div>
+ 
+  }
+</div>
