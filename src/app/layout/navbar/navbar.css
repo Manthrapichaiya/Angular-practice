@@ -1,3 +1,22 @@
+.body{
+    display: flex;
+}
+.sidebar{
+
+    background-color: #214cdb;
+    padding: 10px 20px;
+    color: white;
+   
+    align-items: center;
+    width: 220px;
+    height: 100vh;
+    flex-shrink: 0;
+   
+}
+nav a{
+    display: block;
+     padding: 10px 20px;
+}
 .navbar {
     background-color: #333;
     padding: 10px 20px;

@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './customer-list.css',
 })
 export class CustomerList {
-  @Input() customers: { name: string; age: number; city: string; languageknown: string }[] = [];
+  @Input() customers: { name: string; age: string; city: string; languageknown: string , salary:string}[] = [];
  
   ngOnInit() {
     console.log('Customers on init:', this.customers);

@@ -1,1 +1,45 @@
-<app-dashboard></app-dashboard>
+<!-- <app-dashboard></app-dashboard> -->
+
+<div class="page">
+ <header  class="navbar">
+    <div class="left-section">
+        <div class="brand-icon">F</div>
+        <span class="brand-name">Finexy</span>
+    </div>
+    <div class="center_section">
+        🔍<input type="search" placeholder="Search Product..">
+    </div>
+    <div class="right-section">
+        🔔❓ <div class="divider"></div>
+        <div class="logo">
+            LOGO
+        </div>
+        <div class="user-info">
+            <span class="user-name">Oripio Studio</span>
+            <span class="user-role">Admin ▾</span>
+        </div>
+    </div>
+</header >
+
+  <div class="body">
+    <aside class="sidebar">
+    <h3>MyApp</h3>
+    <nav>
+      <a href="#">Dashboard</a>
+      <a href="#">Employees</a>
+      <a href="#">Settings</a>
+    </nav>
+  </aside>
+    <main class="main"> <div class="dashboard">
+    <div class="card-row">
+        <app-stat-card [title]="'Total Shipments'" [value]="total"></app-stat-card>
+        <app-stat-card [title]="'Pending Shipments'" [value]="pending"></app-stat-card>
+        <app-stat-card [title]="'Delivered Shipments'" [value]="delivered"></app-stat-card>
+        <app-stat-card [title]="'Cancelled Shipments'" [value]="cancel"></app-stat-card>
+    </div>
+    <app-shipment-form (formsubmitted)="updateCards($event)"></app-shipment-form>
+
+    
+</div></main>
+  </div>
+</div>

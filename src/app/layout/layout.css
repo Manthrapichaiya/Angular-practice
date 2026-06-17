@@ -1,0 +1,146 @@
+.page {
+  display: flex;
+  flex-direction: column;   /* navbar stacked on top of body */
+  height: 100vh;            /* lock the whole thing to one screen */
+}
+.body{
+    display: flex;
+    flex: 1;                 /* fill space under the navbar */ 
+    overflow: hidden;         /* hand scrolling to the children */
+}
+.main {
+  flex: 1;
+  overflow-y: auto;         /* ← THIS is what scrolls, by itself */
+  padding: 20px;
+}
+.sidebar{
+
+    background-color: #214cdb;
+    padding: 10px 20px;
+    color: white;
+   
+    align-items: center;
+    width: 220px;
+    /* height: 100vh; */
+    flex-shrink: 0;
+   
+}
+nav a{
+    display: block;
+     padding: 10px 20px;
+}
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* ADD THIS */
+    min-width: 0;
+}
+
+.brand-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #f15a2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.center_section {
+    flex: 1;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #555;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin: 0 20px;
+    /* grows and shrinks with available space */
+    min-width: 0;
+}
+
+input[type="search"] {
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    flex: 1;
+    font-size: 13px;
+    width: 100%;
+    min-width: 0;
+}
+
+.logo {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #f15a2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+
+}
+
+.divider {
+    height: 30px;
+    width: 1px;
+    background-color: white;
+}
+
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+}
+
+.user-role {
+    font-size: 11px;
+    color: #aaa;
+}
+
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}

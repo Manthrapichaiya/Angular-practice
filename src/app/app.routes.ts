@@ -20,10 +20,15 @@ export const routes: Routes = [
     import('./shipment/shipment')
       .then(m => m.Shipment)
 },
-// {
-// path:'customers',
-// loadComponent:() =>
-//     import('./customer-list/customer-list').then(m => m.CustomerList)
-// }
+{
+path:'customers',
+loadComponent:() =>
+    import('./customer-list/customer-list').then(m => m.CustomerList)
+},
+{
+path:'home',
+loadComponent: () => import('./layout/layout').then(m => m.Layout)
+},
+
 
 ];

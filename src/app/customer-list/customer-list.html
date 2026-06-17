@@ -5,13 +5,14 @@
       <th> Age</th>
       <th> City</th>
       <th> language known</th>
+      <th> Salary</th>
     </tr>
     @if(customers.length > 0){
     @for(customer of customers; track customer.age)
     {
     <tr>
       <td>{{ customer.name }}</td>
-      <td>{{ customer.age }}</td>
+      <td>{{ customer.age | date : 'dd-MM-yyyy'}}</td>
       <td>{{ customer.languageknown }}</td>
       <td>
         @switch(customer.languageknown) {
@@ -28,6 +29,9 @@
         <span class="badge badge-grey">{{ customer.languageknown }}</span>
         }
         }
+      </td>
+      <td>
+        {{ customer.salary | currency : 'INR'}}
       </td>
     </tr>
     }
