@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { Navbar } from './navbar/navbar';
-import { Dashboard } from './dashboard/dashboard';
+import { Dashboard } from '../Shipments/Statcards-value/dashboard';
 import { FormsModule } from '@angular/forms';
-import { StatCard } from '../stat-card/stat-card';
-import { ShipmentForm } from '../shipment-form/shipment-form';
+import { StatCard } from '../Shipments/Dashboard-cards/stat-card';
+import { ShipmentForm } from '../Shipments/shipment-form/shipment-form';
 import { ShipmentData } from '../models/shipment.model';
 
 @Component({
   selector: 'app-layout',
-  imports: [FormsModule, Navbar, StatCard, ShipmentForm],
+  imports: [FormsModule, StatCard, ShipmentForm],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
 })

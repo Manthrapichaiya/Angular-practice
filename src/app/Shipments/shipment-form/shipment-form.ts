@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ShipmentData } from '../models/shipment.model';
+import { ShipmentData } from '../../models/shipment.model';
 
 @Component({
   selector: 'app-shipment-form',

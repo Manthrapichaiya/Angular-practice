@@ -1,5 +1,17 @@
+.page {
+  display: flex;
+  flex-direction: column;   /* navbar stacked on top of body */
+  height: 100vh;            /* lock the whole thing to one screen */
+}
 .body{
     display: flex;
+    flex: 1;                 /* fill space under the navbar */ 
+    overflow: hidden;         /* hand scrolling to the children */
+}
+.main {
+  flex: 1;
+  overflow-y: auto;         /* ← THIS is what scrolls, by itself */
+  padding: 20px;
 }
 .sidebar{
 
@@ -9,15 +21,17 @@
    
     align-items: center;
     width: 220px;
-    height: 100vh;
+    /* height: 100vh; */
     flex-shrink: 0;
    
 }
 nav a{
     display: block;
-     padding: 10px 20px;
+    padding: 10px 20px;
+    color: white;
 }
-.navbar {
+/* Header bar */
+.header {
     background-color: #333;
     padding: 10px 20px;
     color: white;
@@ -116,4 +130,19 @@ input[type="search"] {
 .user-role {
     font-size: 11px;
     color: #aaa;
+}
+
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }

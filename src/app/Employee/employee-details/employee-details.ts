@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { EmployeeService } from '../employee';
+import { EmployeeService } from '../../Service/employee-service/employee';
 
 @Component({
   selector: 'app-employee-details',

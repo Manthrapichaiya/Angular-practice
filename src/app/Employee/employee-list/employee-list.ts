@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
-import { Employee } from '../models/employee.model';
+import { Employee } from '../../models/employee.model';
 import { EmployeeCard } from '../employee-card/employee-card';
-import { EmployeeService } from '../employee';
+import { EmployeeService } from '../../Service/employee-service/employee';
 
 @Component({
   selector: 'app-employee-list',

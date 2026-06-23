@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, RouterModule } from '@angular/router';
-import { Navbar } from '../navbar/navbar';
-import { StatCard } from '../../stat-card/stat-card';
-import { ShipmentForm } from '../../shipment-form/shipment-form';
+import { StatCard } from '../Dashboard-cards/stat-card';
+import { ShipmentForm } from '../shipment-form/shipment-form';
 import { ShipmentData  } from '../../models/shipment.model';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [FormsModule, Navbar, StatCard, ShipmentForm],
+  imports: [FormsModule, StatCard, ShipmentForm],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })

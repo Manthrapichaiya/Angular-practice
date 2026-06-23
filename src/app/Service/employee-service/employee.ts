@@ -1,6 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { Employee } from './models/employee.model';
 import { HttpClient } from '@angular/common/http';
+import { Employee } from '../../models/employee.model';
 
 @Injectable({
   providedIn: 'root',

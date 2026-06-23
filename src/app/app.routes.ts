@@ -1,23 +1,23 @@
 import { Routes } from '@angular/router';
 import { Login } from './login/login';
-import { authGuard } from './auth-guard';
+import { authGuard } from './Service/auth-guard-service/auth-guard';
 
 export const routes: Routes = [
     {
         path: '',
         // loadComponent: () => import('./layout/layout').then(m => m.Layout)
-          loadComponent: () => import('./employee-list/employee-list').then(m => m.EmployeeList)
+          loadComponent: () => import('./Employee/employee-list/employee-list').then(m => m.EmployeeList)
     },
     {
         path: 'employee/:id',
         canActivate: [authGuard],
-          loadComponent: () => import('./employee-details/employee-details').then(m => m.EmployeeDetails)
+          loadComponent: () => import('./Employee/employee-details/employee-details').then(m => m.EmployeeDetails)
     },
     { path: 'login', component: Login },
     {
   path: 'shipment',
   loadComponent: () =>
-    import('./shipment/shipment')
+    import('./Shipments/shipment-list/shipment')
       .then(m => m.Shipment)
 },
 {
@@ -27,7 +27,7 @@ loadComponent:() =>
 },
 {
 path:'home',
-loadComponent: () => import('./layout/layout').then(m => m.Layout)
+loadComponent: () => import('./Navbar/layout').then(m => m.Layout)
 },
 
 
