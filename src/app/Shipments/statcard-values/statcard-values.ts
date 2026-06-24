@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { ShipmentData } from '../../models/shipment.model';
 import { ShipmentForm } from '../shipment-form/shipment-form';
-import { StatCard } from '../Dashboard-cards/stat-card';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { StatCard } from '../Dashboard-cards/stat-card';
 
 @Component({
   selector: 'app-statcard-values',
-  imports: [ShipmentForm, StatCard],
+  imports: [ShipmentForm,RouterOutlet, RouterLink,StatCard],
   templateUrl: './statcard-values.html',
   styleUrl: './statcard-values.css',
 })
