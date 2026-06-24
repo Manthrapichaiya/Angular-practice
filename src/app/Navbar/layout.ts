@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { Dashboard } from '../Shipments/Statcards-value/dashboard';
 import { FormsModule } from '@angular/forms';
-import { StatCard } from '../Shipments/Dashboard-cards/stat-card';
+
 import { ShipmentForm } from '../Shipments/shipment-form/shipment-form';
 import { ShipmentData } from '../models/shipment.model';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
-  imports: [FormsModule, StatCard, ShipmentForm],
+  imports: [FormsModule, ShipmentForm,RouterLink,RouterOutlet],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
 })

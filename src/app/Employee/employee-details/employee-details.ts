@@ -16,7 +16,7 @@ export class EmployeeDetails implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.empService.getEmployee().subscribe(data => {
+    this.empService.getAll().subscribe(data => {
       const found = data.find(e => e.id === Number(id)) || null;
       this.employee.set(found)
     });

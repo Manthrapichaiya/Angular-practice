@@ -1,3 +1,4 @@
+<!-- customer1 from shipment list component using @Input  -->
 <div class="table-container">
   <table border="1">
     <tr>
@@ -7,8 +8,8 @@
       <th> language known</th>
       <th> Salary</th>
     </tr>
-    @if(customers.length > 0){
-    @for(customer of customers; track customer.age)
+    @if(customers1.length > 0){
+    @for(customer of customers1; track customer.age)
     {
     <tr>
       <td>{{ customer.name }}</td>
@@ -43,5 +44,120 @@
       </td>
     </tr>
     }
+  </table>
+</div>
+
+
+<!-- customer 2 from service using normal array-->
+<div class="table-container">
+  <table border="1">
+    <thead>
+      <tr>
+        <th> Name</th>
+        <th> Id</th>
+        <th> Phone</th>
+        <th> Website</th>
+        <th> Username</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if(loading){
+      <tr>
+        <td colspan="5">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </td>
+      </tr>
+      }
+      @else if(error){
+      <tr>
+        <td colspan="5">{{ error }}</td>
+      </tr>
+      }
+
+      @else {
+      @for(customer of customers2; track customer.id)
+      {
+      <tr>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.id}}</td>
+        <td>{{ customer.phone }}</td>
+        <td>
+          {{ customer.website}}
+        </td>
+        <td>
+          {{ customer.username}}
+        </td>
+      </tr>
+      }
+      @empty{
+      <tr>
+        <td colspan="4" style="text-align: center; color:#999;">
+          No Data found
+        </td>
+      </tr>
+      }
+      }
+
+    </tbody>
+
+  </table>
+</div>
+
+<!-- customer3 from service using signal -->
+<div class="table-container">
+  <table border="1">
+    <thead>
+      <tr>
+        <th> Name</th>
+        <th> Id</th>
+        <th> Phone</th>
+        <th> Website</th>
+        <th> Username</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if(loading3()){
+      <tr>
+        <td colspan="5">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </td>
+      </tr>
+      }
+      @else if(error3()){
+      <tr>
+        <td colspan="5">{{ error }}</td>
+      </tr>
+      }
+
+      @else {
+      @for(customer of customer3(); track customer.id)
+      {
+      <tr>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.id}}</td>
+        <td>{{ customer.phone }}</td>
+        <td>
+          {{ customer.website}}
+        </td>
+        <td>
+          {{ customer.username}}
+        </td>
+      </tr>
+      }
+      @empty{
+      <tr>
+        <td colspan="4" style="text-align: center; color:#999;">
+          No Data found
+        </td>
+      </tr>
+      }
+      }
+
+    </tbody>
+
   </table>
 </div>

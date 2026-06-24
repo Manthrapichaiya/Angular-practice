@@ -6,16 +6,11 @@ import { Employee } from '../../models/employee.model';
   providedIn: 'root',
 })
 export class EmployeeService {
-    employees = signal<Employee[]>([
-    { id: 1, name: 'Manthra', role: 'Developer', department: 'MCA' },
-    { id: 2, name: 'Kumar', role: 'Project Manager', department: 'Commerce' },
-    { id: 3, name: 'Adhvick', role: 'Tester', department: 'IT' },
-    { id: 3, name: 'Aarya', role: 'Tester', department: 'IT' },
-  ]);
+    employees = signal<Employee[]>([]);
 
   private http = inject(HttpClient);
 
-  getEmployee(){
+  getAll(){
     return this.http.get<Employee[]>('https://jsonplaceholder.typicode.com/users');
   }
 

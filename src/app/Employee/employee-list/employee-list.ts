@@ -13,10 +13,9 @@ export class EmployeeList {
   selectedEmp!: Employee;
   employees = signal<Employee[]>([]);
   private employeeservice = inject(EmployeeService) //Data comes from service
-  // employees = this.employeeservice.employees
 
-  ngOnInit(){
- this.employeeservice.getEmployee().subscribe(data=>{
+ngOnInit(){
+ this.employeeservice.getAll().subscribe(data=>{
      this.employees.set(data)
    });
   }

@@ -1,0 +1,9 @@
+<div class="dashboard">
+    <div class="card-row">
+        <app-stat-card [title]="'Total Shipments'" [value]="total"></app-stat-card>
+        <app-stat-card [title]="'Pending Shipments'" [value]="pending"></app-stat-card>
+        <app-stat-card [title]="'Delivered Shipments'" [value]="delivered"></app-stat-card>
+        <app-stat-card [title]="'Cancelled Shipments'" [value]="cancel"></app-stat-card>
+    </div>
+    <app-shipment-form (formsubmitted)="updateCards($event)"></app-shipment-form>
+</div>

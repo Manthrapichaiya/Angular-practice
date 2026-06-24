@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { CustomerList } from '../../customer-list/customer-list';
+
 import { ShipmentData  } from '../../models/shipment.model';
+import { CustomerList } from '../../customer-list/customer-list';
+import { Layout } from '../../Navbar/layout';
 
 @Component({
   selector: 'app-shipment',
-  imports: [CommonModule,CustomerList],
+  imports: [CommonModule,CustomerList,Layout],
   templateUrl: './shipment.html',
   styleUrl: './shipment.css',
 })
