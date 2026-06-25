@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, inject, Input, signal } from '@angular/core';
 import { timeout } from 'rxjs';
-import { Employee } from '../models/employee.model';
-import { EmployeeService } from '../Service/employee-service/employee';
+import { Employee } from '../../models/employee.model';
+import { EmployeeService } from '../../Service/employee-service/employee';
 
 
 @Component({

@@ -1,11 +1,11 @@
 <div class="selected-employee">
-  @if(employee()){
+  @if(employee(); as emp){
     <div class="emp">
       <h3> Selected Employee</h3>
- <p> {{ employee().id }} </p>
-  <p> {{ employee().name }} </p>
-  <p> {{ employee().email }} </p>
-  <p> {{ employee().phone }} </p>
+ <p> {{ emp!.id }} </p>
+  <p> {{ emp!.name }} </p>
+  <p> {{ emp.email }} </p>
+  <p> {{ emp.phone }} </p>
     </div>
  
   }

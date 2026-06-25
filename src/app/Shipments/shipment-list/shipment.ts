@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 import { ShipmentData  } from '../../models/shipment.model';
-import { CustomerList } from '../../customer-list/customer-list';
+import { CustomerList } from '../../Customer/Tables-practice/customer-list';
 import { Layout } from '../../Navbar/layout';
 
 @Component({

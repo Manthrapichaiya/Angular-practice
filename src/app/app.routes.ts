@@ -13,24 +13,30 @@ export const routes: Routes = [
           import('./Shipments/statcard-values/statcard-values').then(m => m.StatcardValues),
       },
       {
-        path: 'employee',
+        path: 'employees',
         loadComponent: () =>
           import('./Employee/employee-list/employee-list').then(m => m.EmployeeList),
       },
       {
         path: 'employee/:id',
-        canActivate: [authGuard],
+        // canActivate: [authGuard], // temporarily commented this
         loadComponent: () =>
           import('./Employee/employee-details/employee-details').then(m => m.EmployeeDetails),
       },
       {
-        path: 'shipment',
+        path: 'shipments',
         loadComponent: () =>
           import('./Shipments/shipment-list/shipment').then(m => m.Shipment),
+      },
+      {
+        path: 'customers',
+        loadComponent: () =>
+          import('./Customer/customer-cards & Lists/customer-cards').then(m => m.CustomerCards),
       },
     
     ],
   },
+    { path: 'login', loadComponent: () => import('./login/login').then(m => m.Login) }, 
   // {
   // path:'customers',
   // loadComponent:() =>

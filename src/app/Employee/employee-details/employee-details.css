@@ -1,3 +1,4 @@
+/* Full-height page wrapper that centers the employee detail card */
 .selected-employee {
   display: flex;
   justify-content: center;
@@ -7,6 +8,7 @@
   padding: 32px 16px;
 }
 
+/* The detail card itself */
 .emp {
   background: #fff;
   border-radius: 16px;
@@ -18,6 +20,7 @@
   gap: 12px;
 }
 
+/* "Selected Employee" title */
 .emp h3 {
   margin: 0 0 8px 0;
   font-size: 13px;
@@ -27,6 +30,7 @@
   color: #4a90e2;
 }
 
+/* Each detail row, separated by a thin divider line */
 .emp p {
   margin: 0;
   font-size: 15px;
@@ -35,11 +39,13 @@
   padding-bottom: 10px;
 }
 
+/* No divider under the last row */
 .emp p:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
 
+/* Centered full-height wrapper shown while there's no employee() yet */
 .detail-page {
   display: flex;
   justify-content: center;
@@ -47,6 +53,7 @@
   min-height: 100vh;
 }
 
+/* "Loading..." text style */
 .loading {
   color: #999;
   font-size: 15px;

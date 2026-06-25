@@ -1,10 +1,12 @@
 /* employee-list.css */
+/* Page-level wrapper, centers and caps the content width */
 .employee-list-container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 24px 16px;
 }
 
+/* "Employee List" heading */
 .employee-list-container h2 {
   text-align: center;
   font-size: 22px;
@@ -13,6 +15,7 @@
   margin-bottom: 20px;
 }
 
+/* Grid of app-employee-card components */
 .employee-list {
   display: flex;
   flex-direction: row;
@@ -21,12 +24,14 @@
   justify-content: center;
 }
 
+/* Container that centers the selected-employee detail box below the list */
 .selected-employee {
   display: flex;
   justify-content: center;
   margin-top: 32px;
 }
 
+/* Card showing the currently selected employee's details */
 .emp {
   display: flex;
   flex-direction: column;
@@ -39,6 +44,7 @@
   min-width: 250px;
 }
 
+/* "Selected Employee" title inside the card */
 .emp h3 {
   margin: 0 0 10px 0;
   font-size: 13px;
@@ -48,6 +54,7 @@
   color: #4a90e2;
 }
 
+/* Each detail line (id, name, email, phone) */
 .emp p {
   margin: 0;
   font-size: 14px;

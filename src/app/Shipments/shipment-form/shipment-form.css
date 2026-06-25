@@ -1,3 +1,4 @@
+/* Card-style box wrapping the whole shipment form */
 .form-container {
     margin-top: 30px;
     width: 400px;
@@ -6,28 +7,33 @@
     border-radius: 8px;
 }
 
+/* Stacks each form-group vertically with spacing */
 .shipment-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* Single label + field row (e.g. Customer Name, Status) */
 .form-group {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.input,
+/* Input and select fields fill remaining space next to the label */
+input,
 select {
     flex: 1;
     padding: 8px;
 }
 
+/* Fixed width so all field labels line up */
 label {
     width: 130px;
 }
 
+/* Submit button, sized to its content and centered */
 button {
     width: fit-content;
     align-self: center;

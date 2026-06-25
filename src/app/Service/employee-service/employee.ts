@@ -14,6 +14,10 @@ export class EmployeeService {
     return this.http.get<Employee[]>('https://jsonplaceholder.typicode.com/users');
   }
 
+  getById(id: number) {
+    return this.http.get<Employee>(`https://jsonplaceholder.typicode.com/users/${id}`);
+  }
+
   createEmployee(employee:Employee){
     return this.http.post<Employee>('https://jsonplaceholder.typicode.com/users',employee)
   }

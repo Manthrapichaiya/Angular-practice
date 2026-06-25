@@ -1,9 +1,4 @@
-.card-container{
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+/* Single stat card shown inside the dashboard card-row */
 .card{
     background-color: #f0f0f0;
     padding: 20px;

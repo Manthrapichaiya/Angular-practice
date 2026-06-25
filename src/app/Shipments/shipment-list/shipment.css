@@ -1,3 +1,4 @@
+/* Holds the shipments table(s) side by side, wraps on small screens */
 .table-container {
     display: flex;
     justify-content: center;
@@ -8,6 +9,7 @@
     /* to allow tables to wrap on smaller screens */
 }
 
+/* Wrapper around a single table, shares space equally with siblings */
 .table-box {
     padding: 10px;
     min-width: 300px;
@@ -15,12 +17,14 @@
     /* Each table will take equal space */
 }
 
+/* Green border on the shipments table and its cells */
 table,
 th,
 td {
     border: 1px solid rgb(22, 165, 65);
 }
 
+/* Full-width table, single-line borders instead of double */
 table {
     width: 100%;
     border-collapse: collapse;

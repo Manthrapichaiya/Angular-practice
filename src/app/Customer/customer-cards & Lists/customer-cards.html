@@ -1,0 +1,84 @@
+<div class="container">
+  @if (loading) {
+    <p>Loading…</p>
+  } @else if (error) {
+    <p>{{ error }}</p>
+  } @else {
+    <div class="row g-3">
+      @for (customer of customers; track customer.id) {
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{ customer.name }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ customer.username }}</h6>
+              <p class="card-text">
+                📧 {{ customer.email }}<br>
+                📞 {{ customer.phone }}<br>
+                🌐 {{ customer.website }}
+              </p>
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <p>No data found</p>
+      }
+    </div>
+  }
+</div>
+
+<!-- customer 2 from service using normal array-->
+<div class="table-responsive p-3">
+  <table border="1" class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th> Name</th>
+        <th> Id</th>
+        <th> Phone</th>
+        <th> Website</th>
+        <th> Username</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if(loading){
+      <tr>
+        <td colspan="5">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </td>
+      </tr>
+      }
+      @else if(error){
+      <tr>
+        <td colspan="5">{{ error }}</td>
+      </tr>
+      }
+
+      @else {
+      @for(customer of customers; track customer.id)
+      {
+      <tr>
+        <td>{{ customer.name }}</td>
+        <td>{{ customer.id}}</td>
+        <td>{{ customer.phone }}</td>
+        <td>
+          {{ customer.website}}
+        </td>
+        <td>
+          {{ customer.username}}
+        </td>
+      </tr>
+      }
+      @empty{
+      <tr>
+        <td colspan="4" style="text-align: center; color:#999;">
+          No Data found
+        </td>
+      </tr>
+      }
+      }
+
+    </tbody>
+
+  </table>
+</div>

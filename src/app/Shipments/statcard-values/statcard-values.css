@@ -1,3 +1,4 @@
+/* Outer wrapper for the whole stat-cards dashboard section */
 .dashboard {
     display: flex;
     flex-direction: column;
@@ -5,6 +6,7 @@
     padding: 20px;
 }
 
+/* Row that holds the individual app-stat-card components */
 .card-row {
     display: flex;
     gap: 20px;
