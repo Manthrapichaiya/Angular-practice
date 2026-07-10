@@ -1,13 +1,13 @@
 <!-- <app-layout></app-layout> -->
 <div class="table-container">
     <!-- old angular control flow format -->
-    <div class="table-box" *ngIf="shipments.length > 0 ; else noData">
+    <!-- <div class="table-box" *ngIf="((shipmentService.shipmentStreams$ | async)?.length ?? 0) > 0 ; else noData">
         <table border="1">
             <tr>
                 <th>Customer</th>
                 <th>Status</th>
             </tr>
-            <tr *ngFor="let ship of shipments">
+            <tr *ngFor="let ship of shipmentService.shipmentStreams$ | async;">
                 <td>{{ ship.customer }}</td>
                 <td [ngSwitch]="ship.status">
                     <span *ngSwitchCase="'delivered'">Delivered</span>
@@ -17,7 +17,35 @@
                 </td>
             </tr>
         </table>
-    </div>
+    </div> -->
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (ship of shipmentService.shipmentSignalStream();  track $index ) {
+            <tr>
+                <td>{{ ship.customer }}</td>
+                <td>
+                    @switch (ship.status) {
+                    @case ('delivered') { <span>Delivered</span> }
+                    @case ('pending') { <span>Pending</span> }
+                    @case ('cancelled') { <span>Cancelled</span> }
+                    @default { <span>Unknown Status</span> }
+                    }
+                </td>
+            </tr>
+            } @empty {
+            <tr>
+                <td colspan="2">No shipments yet</td>
+            </tr>
+            }
+        </tbody>
+    </table>
     <ng-template #noData>
         <p>No shipments available.</p>
     </ng-template>

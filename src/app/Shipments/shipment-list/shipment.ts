@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { ShipmentData  } from '../../models/shipment.model';
 import { CustomerList } from '../../Customer/Tables-practice/customer-list';
 import { Layout } from '../../Navbar/layout';
+import { ShipmentService } from '../../Service/shipment-service/shipment-service';
 
 @Component({
   selector: 'app-shipment',
@@ -12,12 +13,8 @@ import { Layout } from '../../Navbar/layout';
   styleUrl: './shipment.css',
 })
 export class Shipment {
-    shipments : ShipmentData [] = [
-    { customer : 'Manthra', status : 'delivered'},
-    { customer : 'Kumar', status : 'pending'},
-    { customer : 'Athvik', status : 'cancelled'},
-    
-  ]
+     shipmentService = inject(ShipmentService); //import shipment service
+
 
   customersDetails =[
     { name : 'Manthra', age : '1997-07-21', city : 'Bangalore', languageknown:'kannada', salary : '500000'},
