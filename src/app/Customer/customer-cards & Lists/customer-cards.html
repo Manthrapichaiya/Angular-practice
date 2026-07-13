@@ -1,12 +1,19 @@
+<!-- This component is basically for learning bootstrap -->
 <div class="container">
-  @if (loading) {
-    <p>Loading…</p>
-  } @else if (error) {
-    <p>{{ error }}</p>
-  } @else {
-    <div class="row g-3">
-      @for (customer of customers; track customer.id) {
-        <div class="col-12 col-md-6 col-lg-4">
+   <div class="list-header">
+  <h2>Customer List</h2>
+    <!--client side search  -->
+  <input
+        type="text"
+         class="search-input"
+        placeholder="Search customers..."
+        (input)="onSearch($event)"
+        >
+    </div>
+  @if (employeeservice.result$ | async) {
+     <div class="row g-3">
+      @for (customer of employeeservice.result$ | async; track customer.id) {
+        <div class="col-12 col-md-6 col-lg-2">
           <div class="card h-100">
             <div class="card-body">
               <h5 class="card-title">{{ customer.name }}</h5>
@@ -23,23 +30,37 @@
         <p>No data found</p>
       }
     </div>
+  } @else if (error) {
+    <p>{{ error }}</p>
+  } @else {
+   <p>Loading...</p>
   }
 </div>
 
 <!-- customer 2 from service using normal array-->
+   <div class="list-header mt-5">
+  <h2>Customer List</h2>
+  <!-- server side search-->
+     <input
+        type="text"
+         class="search-input"
+        placeholder="Search customers..."
+        (input)="onSearch_server($event)"
+        >
+    </div>
 <div class="table-responsive p-3">
   <table border="1" class="table table-striped table-hover">
     <thead>
       <tr>
         <th> Name</th>
-        <th> Id</th>
-        <th> Phone</th>
-        <th> Website</th>
+        <th> Age</th>
+        <th> Gender</th>
+        <th> Email</th>
         <th> Username</th>
       </tr>
     </thead>
     <tbody>
-      @if(loading){
+      @if(loading2){
       <tr>
         <td colspan="5">
           <div class="spinner-border" role="status">
@@ -55,14 +76,14 @@
       }
 
       @else {
-      @for(customer of customers; track customer.id)
+      @for(customer of customerService.results$ | async; track customer.id)
       {
       <tr>
-        <td>{{ customer.name }}</td>
-        <td>{{ customer.id}}</td>
-        <td>{{ customer.phone }}</td>
+        <td>{{ customer.firstName }}</td>
+        <td>{{ customer.age}}</td>
+        <td>{{ customer.gender }}</td>
         <td>
-          {{ customer.website}}
+          {{ customer.email}}
         </td>
         <td>
           {{ customer.username}}

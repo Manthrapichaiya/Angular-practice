@@ -1,1 +1,20 @@
 
+/*  search bar style */
+.list-header {
+  display: flex;
+  justify-content: space-between;  /* title left, search right */
+  align-items: center;             /* vertically line them up */
+  margin-bottom: 16px;
+}
+
+.search-input {
+  width: 240px;                 /* fixed, small — not full width */
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+.search-input:focus {
+  border-color: #1f4e79;
+}

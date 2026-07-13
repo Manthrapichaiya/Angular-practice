@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { Employee } from '../../models/employee.model';
 import { EmployeeCard } from '../employee-card/employee-card';
 import { EmployeeService } from '../../Service/employee-service/employee';
@@ -12,6 +12,7 @@ import { EmployeeService } from '../../Service/employee-service/employee';
 export class EmployeeList {
   selectedEmp!: Employee;
   employees = signal<Employee[]>([]);
+  searchTerm = signal<string>('');
   private employeeservice = inject(EmployeeService) //Data comes from service
 
 ngOnInit(){
@@ -23,4 +24,18 @@ ngOnInit(){
   employeeSelected(data: Employee) {
     this.selectedEmp = data
   }
+
+  // search the employee using signals
+onSearch(event:Event){
+  const term = (event.target as HTMLInputElement).value;
+  this.searchTerm.set(term)
+}
+
+results = computed(()=>
+  this.employees().filter(e=>
+    e.name.toLowerCase().includes(this.searchTerm().toLowerCase())
+  )
+
+);
+
 }

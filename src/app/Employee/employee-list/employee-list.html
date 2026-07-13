@@ -1,10 +1,18 @@
 <div class="employee-list-container">
+   <div class="list-header">
   <h2>Employee List</h2>
+     <input
+        type="text"
+         class="search-input"
+        placeholder="Search employees..."
+        (input)="onSearch($event)"
+        >
+    </div>
   @if (employees().length === 0) {
   <p>No employees found.</p>
   } @else {
   <div class="employee-list">
-    @for (emp of employees(); track emp.id) {
+    @for (emp of results();; track emp.id) {
     <app-employee-card [employee]="emp" (selectedEmployee)="employeeSelected($event)"></app-employee-card>
     }
   </div>
